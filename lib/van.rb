@@ -9,19 +9,20 @@ class Van
   end
 
   def bike_count
-    @bikes.count
+    @bikes.length
   end
 
-  def pick_up_bike(bike)
+  def pick_up_bike bike
+    raise "Van is full" if full?
     @bikes << bike
   end
 
-  def drop_off_bike(bike)
+  def drop_off_bike bike
     @bikes.delete(bike)
   end
 
   def full?
-    @capacity <= @bikes.count
+    @capacity == bike_count
   end
 
   def working_bikes

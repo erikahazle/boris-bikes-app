@@ -20,7 +20,7 @@ class DockStation
   end
 
   def full?
-    bike_count == @capacity
+    @capacity == bike_count
   end
 
   def available_bikes
