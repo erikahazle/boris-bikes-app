@@ -33,4 +33,13 @@ describe Van do
     van.pick_up_bike(broken_bike)
     expect(van.working_bikes).to eq([working_bike])
   end
+
+  it 'should provide the list of broken bikes' do
+    working_bike, broken_bike = Bike.new, Bike.new
+    broken_bike.break
+    van.pick_up_bike(working_bike)
+    van.pick_up_bike(broken_bike)
+    expect(van.broken_bikes).to eq([broken_bike])
+  end
+
 end
