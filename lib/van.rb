@@ -23,4 +23,8 @@ class Van
   def full?
     @capacity <= @bikes.count
   end
+
+  def working_bikes
+    @bikes.reject { |bike| bike.broken? }
+  end
 end

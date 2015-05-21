@@ -25,4 +25,12 @@ describe Van do
     50.times { van.pick_up_bike(Bike.new) }
     expect(van.full?).to be true
   end
+
+  it 'should provide the list of working bikes' do
+    working_bike, broken_bike = Bike.new, Bike.new
+    broken_bike.break
+    van.pick_up_bike(working_bike)
+    van.pick_up_bike(broken_bike)
+    expect(van.working_bikes).to eq([working_bike])
+  end
 end
