@@ -10,4 +10,8 @@ class Van
   def pick_up_bike(bike)
     @bikes << bike
   end
+
+  def drop_off_bike(bike)
+    @bikes.delete(bike)
+  end
 end
